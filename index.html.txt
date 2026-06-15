@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolão Copa 2026</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>⚽ Bolão Copa 2026</h1>
+</header>
+
+<div class="stats">
+
+    <div class="card">
+        <span>Total de Pontos</span>
+        <h2 id="totalPontos">0</h2>
+    </div>
+
+    <div class="card">
+        <span>Jogos Registrados</span>
+        <h2 id="totalJogos">0</h2>
+    </div>
+
+</div>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Jogo</th>
+                <th>Palpite</th>
+                <th>Resultado</th>
+                <th>Pontos</th>
+            </tr>
+        </thead>
+        <tbody id="tabelaJogos"></tbody>
+    </table>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
