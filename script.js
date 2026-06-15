@@ -18,8 +18,23 @@ async function carregarDados(){
 
     dados.forEach(linha => {
 
-        const pontos =
-        parseInt(linha["Pontos adquiridos"]) || 0;
+        const palpite = (linha["Palpite"] || "").trim();
+const resultado = (linha["Resultado"] || "").trim();
+
+let pontos = 0;
+
+if (resultado !== "") {
+  const [golPalpite1, golPalpite2] = palpite.split("x").map(n => parseInt(n.trim()));
+  const [golResultado1, golResultado2] = resultado.split("x").map(n => parseInt(n.trim()));
+
+  const getOutcome = (g1, g2) => g1 > g2 ? "v" : g1 < g2 ? "d" : "e"; // vitória, derrota, empate
+
+  if (palpite === resultado) {
+    pontos = 3; // Placar exato
+  } else if (getOutcome(golPalpite1, golPalpite2) === getOutcome(golResultado1, golResultado2)) {
+    pontos = 1; // Resultado correto, placar errado
+  }
+}
 
         totalPontos += pontos;
 
